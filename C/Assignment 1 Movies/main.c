@@ -26,10 +26,13 @@ struct movie* createMovie(char* currLine)
     char* savePtr1;
     char* savePtr2;
 
-    // The first token is the title
-    char* token = strtok_r(currLine, ",", &savePtr1);
-    currMovie->title = calloc(strlen(token) + 1, sizeof(char));
-    strcpy(currMovie->title, token);
+    /*  OMITTED
+    *   // The first token is the title
+    *   . . . 
+    *   
+    *   // The next token is the year
+    *   . . .
+    */
 
     // The next token is the year
     token = strtok_r(NULL, ",", &savePtr1);
@@ -50,12 +53,11 @@ struct movie* createMovie(char* currLine)
         i++;
         token = strtok_r(NULL, "[];", &savePtr2);
     }
-
-    // The last token is the rating
-    token = strtok_r(NULL, ",", &savePtr1);
-    temp = calloc(strlen(token) + 1, sizeof(char));
-    strcpy(temp, token);
-    currMovie->rating = strtod(temp, &ptr);
+    
+    /*  OMITTED
+    *   // The last token is the rating
+    *   . . . 
+    */
 
     // Set the next node to NULL in the newly created student entry
     currMovie->next = NULL;
@@ -144,28 +146,9 @@ void printMovieYearList(struct movie* list, int numInput)
 */
 void movieRatingRecursion(struct movie* list, int year)
 {
-    char* title;
-    double rating = 0.0;
-
-    while (list != NULL)
-    {
-        if (list->year == year)
-        {
-            if (list->rating > rating)
-            {
-                title = calloc(strlen(list->title) + 1, sizeof(char));
-                strcpy(title, list->title);
-                rating = list->rating;
-            }
-        }
-        list = list->next;
-    }
-    if (rating != 0.0)
-    {
-        printf("%d %g %s\n", year, rating, title);
-    }
-
-    return;
+    /*  OMITTED
+    *   used a while loop that check if the next node was not null to print a statement, increment the node thereafter
+    */
 }
 
 /*
@@ -173,13 +156,9 @@ void movieRatingRecursion(struct movie* list, int year)
 */
 void printMovieRatingList(struct movie* list)
 {
-    int year = 1990;
-    while (year <= 2021)
-    {
-        movieRatingRecursion(list, year);
-        year++;
-    }
-    return;
+    /*  OMITTED
+    *   used a while loop that check if the if the year does pass over 2021, increment year
+    */
 }
 
 // compare two undercased strings
@@ -194,30 +173,9 @@ int strcmp(char const* a, char const* b)
 */
 void printMovieLanguageList(struct movie* list, char* strInput)
 {
-    int checker = 0;
-
-    while (list != NULL)
-    {
-        int i = 0;
-        while (list->language[i] != NULL)
-        {
-            if (strcmp(list->language[i], strInput) == 0)
-            {
-                printf("%d %s\n", list->year, list->title);
-                checker = 1;
-                break;
-            }
-            i++;
-        }
-        list = list->next;
-    }
-
-    if (checker == 0)
-    {
-        printf("No data about movies released in %s\n", strInput);
-    }
-
-    return;
+    /*  OMITTED
+    *   used a while loop that check if the next node was not null to print a statement, increment the node thereafter
+    */
 }
 
 /*
