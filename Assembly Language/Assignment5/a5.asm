@@ -1,8 +1,7 @@
-TITLE Assignment 5     (Assignment5.asm)
+TITLE Assignment 5     (a5.asm)
 
 ; Author: Abraham Almahmoud
 ; Last Modified: 5/29/2020
-; OSU email address: almahmoa@oregonstate.edu
 ; Course number/section: 271
 ; Project Number: 5                Due Date: 05/24/2020
 ; Description: Create a list of 200 random numbers between 10-29. Count the repeated number, and sort them as well. Displays these list.
