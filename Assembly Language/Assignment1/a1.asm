@@ -1,8 +1,7 @@
-TITLE Assignment 1  (Assignment1.asm)
+TITLE Assignment 1  (a1.asm)
 
 ; Author: Abraham Almahmoud
 ; Last Modified:4/9/2020
-; OSU email address: almahmoa@oregonstate.edu
 ; Course number/section:271
 ; Project Number:1                Due Date: 04/12/2020
 ; Description: Prompt user to enter three numbers for basic calculations.
