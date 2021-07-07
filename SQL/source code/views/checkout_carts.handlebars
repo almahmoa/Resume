@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a class="active" href='/checkout_carts'>Checkout Carts</a>
+</div>
+
+<h1>Checkout Carts Table</h1>
+
+<form id="addcheckoutcart" action="/checkout_carts" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new checkout cart:</h3>
+    <label for="checkout_cart">Products In Cart ID:</label>
+    <input type="number" name="product_cart"><br>
+    <input type="submit" value="SUBMIT CHECKOUT CART">
+</form>
+<br>
+
+<table>
+    <thead>
+    <th>Checkout Cart ID</th>
+    <th>Products Cart ID</th>
+    </thead>
+    <tbody>
+        {{#each getCheckoutCarts}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{product_cart}}</td>
+            <td><button onclick="deleteCheckoutCart({{id}})">Delete</button></td>
+            <td><a href="/checkout_carts/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+<br>
+<br>
+</body>
+</html>

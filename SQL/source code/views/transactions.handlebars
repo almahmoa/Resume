@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a class="active" href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+
+<h1>Transactions Table</h1>
+
+<form id="addtransaction" action="/transactions" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new transaction:</h3>
+    <label for="customer">Customer ID:</label>
+    <select id='customer_selector' name="customer_t">
+        {{#each getCustomers}}
+        <option value="{{customer_id}}">{{customer_id}}</option>
+        {{/each}}
+    </select><br>
+    <label for="checkout">Checkout ID:</label>
+    <select id='checkout_selector' name="checkout_t">
+        {{#each getCheckouts}}
+        <option value="{{checkout_id}}">{{checkout_id}}</option>
+        {{/each}}
+    </select><br>
+    <label for="store">Store ID:</label>
+    <select id='store_selector' name="store_t">
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select><br>
+    <label for="date">Date:</label>
+    <input type="date" name="date"><br><br>
+    <input type="submit" value="SUBMIT TRANSACTION">
+</form>
+<br>
+
+<form id='filter_transactions' action='' method=''>
+    <label> Filter by store </label>
+    <select id='store_filter' name="store_t">
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select>
+    <input type="button" value="Filter" onclick="filterTransactionsByStores()">
+</form>
+
+<form id='asc_date' action='' method=''>
+    <label> Sort transactions by date:</label>
+    <input type="button" value="Ascending" onclick="ascTransactionsByDate()">
+    <input type="button" value="Descending" onclick="descTransactionsByDate()">
+</form>
+<td><a href="/transactions/">Reset Sort</a></td>
+<br />
+<br />
+<table>
+    <thead>
+    <th>Transaction ID</th>
+    <th>Customer ID</th>
+    <th>Checkout ID</th>
+    <th>Store ID</th>
+    <th>Date</th>
+    </th>
+    <tbody>
+        {{#each getTransactions}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{customer_t}}</td>
+            <td>{{checkout_t}}</td>
+            <td>{{store_t}}</td>
+            <td>{{date}}</td>
+            <td><button onclick="deleteTransaction({{id}})">Delete</button></td>
+            <td><a href="/transactions/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+<br>
+<br>
+</body>
+</html>

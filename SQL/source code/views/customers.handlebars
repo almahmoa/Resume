@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a class="active" href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+
+<h1>Customers Table</h1>
+
+<!-- pk player id, fname, lname, vBuckQty, level, fk teamID, playerAlive -->
+<form id="addcustomer" action="/customers" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new customer:</h3>
+    <label for="email">Email:</label>
+    <input type="text" name="email"><br />
+    <label for="birth_date">Birth Date:</label>
+    <input type="date" name="birth_date"><br />
+    <label for="membership_card">Membership Card:</label>
+    <input type="checkbox" value="1" id="custom7" checked="checked" />
+    <input type="hidden" value="1" id="hdncustom7" name="membership_card" /><br>
+    <input type="submit" value="SUBMIT CUSTOMER">
+</form>
+<br>
+
+<form id='filter_stores' action='' method=''>
+    <label> Filter by Membership Status </label>
+    <select id='membership_filter' name="membership">
+        <option value="0">False</option>
+        <option value="1">True</option>
+    </select>
+    <input type="button" value="Filter" onclick="filterCustomersByMembership()">
+</form>
+
+<form id='search_email' action='' method=''>
+    <label> Search email with name starting with:</label>
+    <input id='email_string' type='text' name='email_string' value=''>
+    <input type="button" value="Search" onclick="searchEmailByName()">
+</form>
+
+<form id='asc_birth' action='' method=''>
+    <label> Sort customers by birthday:</label>
+    <input type="button" value="Ascending" onclick="ascCustomersByBirth()">
+    <input type="button" value="Descending" onclick="descCustomersByBirth()">
+</form>
+<td><a href="/customers/">Reset Sort</a></td>
+<br />
+<br />
+<table>
+    <thead>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Birth Date</th>
+    <th>Membership Card</th>
+    </thead>
+    <tbody>
+        {{#each getCustomers}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{email}}</td>
+            <td>{{birth_date}}</td>
+            <td>
+                <div id={{id}}></div>
+                <script>
+checkboxdisplay({{membership_card}}, {{id}});
+                 function checkboxdisplay(checkbox, id) {
+    console.log(checkbox);
+    if(checkbox == 1){
+    document.getElementById(id).innerHTML = "True";
+    }
+    else{
+    document.getElementById(id).innerHTML = "False";
+    }
+    }
+                $('#custom7').on('change', function(){
+   $('#hdncustom7').val(this.checked ? 1 : 0);
+});
+                </script>
+            </td>
+            <td><button onclick="deleteCustomer({{id}})">Delete</button></td>
+            <td><a href="/customers/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a class="active" href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+<form id="update-products_in_cart" action="/products_in_carts" method="post">
+    <h3>UPDATE PRODUCT IN CART:</h3>
+    Product Cart ID: <input type="number" name="product_cart_id" value="{{productsinCart.product_cart_id}}"><br>
+    Product ID: <select name="product_c" id="product-selector">
+        <option value="{{productsinCart.product_c}}" selected="">No change</option>
+        {{#each getProducts}}
+        <option value="{{product_id}}">{{product_id}}</option>
+        {{/each}}
+    </select><br>
+
+</form>
+<button onclick="updateProducts_in_cart({{productsinCart.id}})">Update</button>
+<a href="/products_in_carts"><button>Back</button></a>
+{{!-- </form> --}}
+</html>

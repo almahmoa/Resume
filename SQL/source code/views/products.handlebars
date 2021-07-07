@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a class="active" href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+
+<h1>Products Table</h1>
+
+<!-- pk player id, fname, lname, vBuckQty, level, fk teamID, playerAlive -->
+<form id="addproducts" action="/products" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new product:</h3>
+    <label for="product_name">Product Name:</label>
+    <input type="text" name="product_name"><br />
+    <label for="Product_company_id">Prouduct Company ID:</label>
+    <input type="text" name="product_company_id"><br />
+    <label for="cost">Cost:</label>
+    <input type="number" name="cost"><br />
+    <label for="current_supply">Current Supply:</label>
+    <input type="number" name="current_supply"><br />
+    <label for="max_supply">Max Supply:</label>
+    <input type="number" name="max_supply"><br />
+    <label for="product_category">Product Category:</label>
+    <input type="text" name="product_category"><br /><br>
+    <input type="submit" value="SUBMIT PRODUCT">
+</form>
+<br>
+
+<form id='filter_product' action='' method=''>
+    <label> Filter by product's company </label>
+    <select id='company_filter' name="product_company_id">
+        {{#each getProducts}}
+        <option value="{{product_company_id}}">{{product_company_id}}</option>
+        {{/each}}
+    </select>
+    <input type="button" value="Filter" onclick="filterProductsByCompany()">
+</form>
+
+<form id='search_product' action='' method=''>
+    <label> Search products with names starting with:</label>
+    <input id='product_string' type='text' name='product_string' value=''>
+    <input type="button" value="Search" onclick="searchProductsByNames()">
+</form>
+
+<form id='asc_supply' action='' method=''>
+    <label> Sort current supply by name:</label>
+    <input type="button" value="Ascending" onclick="ascProductsBySupply()">
+    <input type="button" value="Descending" onclick="descProductsBySupply()">
+</form>
+<td><a href="/products/">Reset Sort</a></td>
+<br />
+<br />
+
+<table>
+    <thead>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Product Company</th>
+    <th>Cost</th>
+    <th>Current Supply</th>
+    <th>Max Supply</th>
+    <th>Product Category</th>
+    </thead>
+    <tbody>
+        {{#each getProducts}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{product_name}}</td>
+            <td>{{product_company_id}}</td>
+            <td>{{cost}}</td>
+            <td>{{current_supply}}</td>
+            <td>{{max_supply}}</td>
+            <td>{{product_category}}</td>
+            <td><button onclick="deleteProduct({{id}})">Delete</button></td>
+            <td><a href="/products/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+<br>
+<br>
+</body>
+</html>
+

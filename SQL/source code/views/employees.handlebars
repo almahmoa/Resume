@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a class="active" href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+
+<h1>Employees Table</h1>
+
+<form id="addemployee" action="/employees" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new employee:</h3>
+    <label for="store">Store ID:</label>
+    <select id='store_selector' name="store_e">
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name"><br>
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name"><br>
+    <label for="birth_date">Birth Date:</label>
+    <input type="date" name="birth_date"><br>
+    <label for="email">Email:</label>
+    <input type="text" name="email"><br>
+    <label for="phone">Phone:</label>
+    <input type="number" name="phone"><br>
+    <label for="wage">Wage:</label>
+    <input type="number" name="wage"><br>
+    <label for="gender">Gender:</label>
+    <input type="text" name="gender"><br>
+    </select><br>
+    <input type="submit" value="SUBMIT EMPLOYEE">
+</form>
+<br>
+
+<form id='filter_employees' action='' method=''>
+    <label> Filter by store </label>
+    <select id='store_filter' name="store">
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select>
+    <input type="button" value="Filter" onclick="filterEmployeesByStores()">
+</form>
+
+<form id='search_stores' action='' method=''>
+    <label> Search employees with last names starting with:</label>
+    <input id='last_name_string' type='text' name='last_name_string' value=''>
+    <input type="button" value="Search" onclick="searchEmployeesByLastName()">
+</form>
+
+<form id='asc_last_name' action='' method=''>
+    <label> Sort employees by last name:</label>
+    <input type="button" value="Ascending" onclick="ascEmployeesByLastName()">
+    <input type="button" value="Descending" onclick="descEmployeesByLastName()">
+</form>
+<td><a href="/employees/">Reset Sort</a></td>
+<br />
+<br />
+
+<table>
+    <thead>
+    <th>Employee ID</th>
+    <th>Store ID</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Birth Date</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Wage</th>
+    <th>Gender</th>
+    </thead>
+    <tbody>
+        {{#each getEmployees}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{store_e}}</td>
+            <td>{{last_name}}</td>
+            <td>{{first_name}}</td>
+            <td>{{birth_date}}</td>
+            <td>{{email}}</td>
+            <td>{{phone}}</td>
+            <td>{{wage}}</td>
+            <td>{{gender}}</td>
+            <td><button onclick="deleteEmployee({{id}})">Delete</button></td>
+            <td><a href="/employees/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+<br>
+<br>
+</body>
+</html>

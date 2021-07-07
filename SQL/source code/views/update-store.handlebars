@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a class="active" href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+<form id="update-store" action="/stores" method="post">
+    <h3>UPDATE STORE:</h3>
+    Cost of Rent: <input type="number" name="cost_of_rent" value="{{store.cost_of_rent}}"><br>
+    Street: <input type="text" name="street" value="{{store.street}}"><br>
+    City: <input type="text" name="city" value="{{store.city}}"><br>
+    State: <input type="text" name="state" value="{{store.state}}"><br>
+    Zip: <input type="number" name="zip" value="{{store.zip}}"><br>
+</form>
+<button onclick="updateStore({{store.id}})">Update</button>
+<a href="/stores"><button>Back</button></a>
+{{!-- </form> --}}
+</html>

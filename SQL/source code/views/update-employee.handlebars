@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a class="active" href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+<form id="update-employee" action="/employees" method="post">
+    <h3>UPDATE EMPLOYEE:</h3>
+    Store ID: <select name="store_e" id="store-selector">
+        <option value="{{employee.store_e}}" selected="">No change</option>
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select><br>
+    Last Name: <input type="text" name="last_name" value="{{employee.last_name}}"><br>
+    First Name: <input type="text" name="first_name" value="{{employee.first_name}}"><br>
+    Birth Date: <input type="date" name="birth_date" value="{{employee.birth_date}}"><br>
+    Email: <input type="text" name="email" value="{{employee.email}}"><br>
+    Phone Number: <input type="number" name="phone" value="{{employee.phone}}"><br>
+    Wage: <input type="number" name="wage" value="{{employee.wage}}"><br>
+    Gender: <input type="text" name="gender" value="{{employee.gender}}"><br>
+</form>
+<button onclick="updateEmployee({{employee.id}})">Update</button>
+<a href="/employees"><button>Back</button></a>
+{{!-- </form> --}}
+</html>

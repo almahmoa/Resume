@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a class="active" href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+<h1>Products in Stores Table</h1>
+
+<form id="addproducts_in_stores" action="/products_in_stores" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new products in store:</h3>
+    <label for="product_in_stores">Products in Stores:</label>
+    <label for="product">Product ID:</label>
+    <select id='product_selection' name="product_p">
+        {{#each getProducts}}
+        <option value="{{product_id}}">{{product_id}}</option>
+        {{/each}}
+    </select><br>
+    <label for="store">Store ID:</label>
+    <select id='store_selection' name="store_p">
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select><br>
+    <input type="submit" value="SUBMIT PRODUCTS INTO STORE">
+</form>
+<br>
+
+<form id='filter_products_in_stores' action='' method=''>
+    <label> Filter by products in store </label>
+    <select id='products_in_store_filter' name="store_p">
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select>
+    <input type="button" value="Filter" onclick="filterProductsByStores()">
+</form>
+<td><a href="/products_in_stores/">Reset Sort</a></td>
+<br />
+<br />
+
+<table>
+    <thead>
+    <th>Product ID</th>
+    <th>Store ID</th>
+    </th>
+    <tbody>
+        {{#each getProductsinStores}}
+        <tr>
+            <td>{{product_p}}</td>
+            <td>{{store_p}}</td>
+            <td><button onclick="deleteProducts_in_store({{id}})">Delete</button></td>
+            <td><a href="/products_in_stores/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+</body>
+</html>

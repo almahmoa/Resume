@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a class="active" href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+
+<h1>Products in Carts Table</h1>
+
+<form id="addproducts_in_carts" action="/products_in_carts" method="post">
+    <!-- pk will be auto generated -->
+    <h3>Add new products in cart:</h3>
+    <label for="product">Product Cart ID:</label>
+    <input type="number" name="product_cart_id"><br />
+    <label for="product_id">Product ID:</label>
+    <select id='product_id_selection' name="product_c">
+        {{#each getProducts}}
+        <option value="{{product_id}}">{{product_id}}</option>
+        {{/each}}
+    </select><br>
+    <input type="submit" value="SUBMIT PRODUCTS INTO CART">
+</form>
+<br>
+
+<form id='filter_products_in_carts' action='' method=''>
+    <label> Filter by products in cart </label>
+    <input type="number" id="products_in_cart_filter" name="product_cart_id">
+    <input type="button" value="Filter" onclick="filterProductsByCarts()">
+</form>
+<td><a href="/products_in_carts/">Reset Sort</a></td>
+<br />
+<br />
+
+<table>
+    <thead>
+    <th>Product Cart ID</th>
+    <th>Product</th>
+    </thead>
+    <tbody>
+        {{#each getProductsinCarts}}
+        <tr>
+            <td>{{product_cart_id}}</td>
+            <td>{{product_c}}</td>
+            <td><button onclick="deleteProducts_in_cart({{id}})">Delete</button></td>
+            <td><a href="/products_in_carts/{{id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+</body>
+</html>

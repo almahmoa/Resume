@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a class="active" href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+<form id="update-products_in_stores" action="/products_in_stores" method="post">
+    <h3>UPDATE PRODUCTS IN STORE:</h3>
+    Product ID: <select name="product_p" id="product_selection">
+        <option value="{{getProductsinStore.product_p}}" selected="">No change</option>
+        {{#each getProducts}}
+        <option value="{{product_id}}">{{product_id}}</option>
+        {{/each}}
+    </select><br>
+    Store ID: <select name="store_p" id="store_selector">
+        <option value="{{getProductsinStore.store_p}}" selected="">No change</option>
+        {{#each getStores}}
+        <option value="{{store_id}}">{{store_id}}</option>
+        {{/each}}
+    </select><br>
+</form>
+<button onclick="updateProducts_in_store({{getProductsinStore.id}})">Update</button>
+<a href="/products_in_stores"><button>Back</button></a>
+{{!-- </form> --}}
+</html>

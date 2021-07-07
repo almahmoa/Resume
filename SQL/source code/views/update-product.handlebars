@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href='/stores'>Stores</a>
+    <a href='/customers'>Customers</a>
+    <a href='/employees'>Employees</a>
+    <a class="active" href='/products'>Products</a>
+    <a href='/transactions'>Transactions</a>
+    <a href='/products_in_stores'>Product in Stores</a>
+    <a href='/products_in_carts'>Product in Carts</a>
+    <a href='/checkout_carts'>Checkout Carts</a>
+</div>
+<form id="update-product" action="/products" method="post">
+    <h3>UPDATE PRODUCT:</h3>
+    Product Name: <input type="text" name="product_name" value="{{product.product_name}}"><br>
+    Product Company: <input type="text" name="product_company_id" value="{{product.product_company_id}}"><br>
+    Cost: <input type="number" name="cost" value="{{product.cost}}"><br>
+    Current Supply: <input type="number" name="current_supply" value="{{product.current_supply}}"><br>
+    Max Supply: <input type="number" name="max_supply" value="{{product.max_supply}}"><br>
+    Product Category: <input type="text" name="product_category" value="{{product.product_category}}"><br>
+</form>
+<button onclick="updateProduct({{product.id}})">Update</button>
+<a href="/products"><button>Back</button></a>
+{{!-- </form> --}}
+</html>

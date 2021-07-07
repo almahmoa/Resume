@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\shady_deals.css" type="text/css">
+    <title>Index</title>
+</head>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href='/stores'>Stores</a>
+        <a href='/customers'>Customers</a>
+        <a href='/employees'>Employees</a>
+        <a href='/products'>Products</a>
+        <a class="active" href='/transactions'>Transactions</a>
+        <a href='/products_in_stores'>Product in Stores</a>
+        <a href='/products_in_carts'>Product in Carts</a>
+        <a href='/checkout_carts'>Checkout Carts</a>
+    </div>
+        <form id="update-transaction" action="/transactions" method="post">
+            <h3>UPDATE TRANSACTION:</h3>
+            Customer ID: <select name="customer_t" id="customer-selector">
+                <option value="{{transaction.customer_t}}" selected="">No change</option>
+                {{#each getCustomers}}
+                <option value="{{customer_id}}">{{customer_id}}</option>
+                {{/each}}
+            </select><br>
+            Checkout ID: <select name="checkout_t" id="checkout-selector">
+                <option value="{{transaction.checkout_t}}" selected="">No change</option>
+                {{#each getCheckouts}}
+                <option value="{{checkout_id}}">{{checkout_id}}</option>
+                {{/each}}
+            </select><br>
+            Store ID: <select name="store_t" id="store-selector">
+                <option value="{{transaction.store_t}}" selected="">No change</option>
+                {{#each getStores}}
+                <option value="{{store_id}}">{{store_id}}</option>
+                {{/each}}
+            </select><br>
+            Date: <input type="date" name="date" value="{{transaction.date}}"><br>
+        </form>
+        <button onclick="updateTransaction({{transaction.id}})">Update</button>
+        <a href="/transactions"><button>Back</button></a>
+        {{!-- </form> --}}
+</html>
