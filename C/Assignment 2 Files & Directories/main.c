@@ -47,15 +47,9 @@ void generateFile(char* title, char* year, char* dirName)
 */
 void processFile(char* filePath)
 {
-    // Open the specified file for reading only
-    FILE* movieFile = fopen(filePath, "r");
-    fscanf(movieFile, "%*[^\n]\n");
-    char* currLine = NULL;
-    size_t len = 0;
-    ssize_t nread;
-    int num = 0;
-    char* title;
-    char* year;
+    /*  Omitted
+    *   Variable set-up
+    */
 
     printf("Now processing the chosen file named %s\n", filePath);
 
@@ -77,11 +71,11 @@ void processFile(char* filePath)
         char* token = strtok_r(currLine, ",", &savePtr);
         title = calloc(strlen(token) + 1, sizeof(char));
         strcpy(title, token);
-
-        // The next token is the year
-        token = strtok_r(NULL, ",", &savePtr);
-        year = calloc(strlen(token) + 1, sizeof(char));
-        strcpy(year, token);
+        
+        /* Omitted
+        *  // The next token is the year
+        *   . . .
+        */
 
         //printf("%s %s\n", title, year);
         generateFile(title, year, dirName);
@@ -160,44 +154,14 @@ void menuTwo()
         }
         else
         {
-            switch (numInput)
-            {
-            case 1: //largest file
-                processFile(largestEntry);
-                runInterface = false;
-                break;
-            case 2: //smallest file
-                processFile(smallestEntry);
-                runInterface = false;
-                break;
-            case 3:
-                printf("Enter the complete file name: ");
-                scanf("%s", strInput);
-                DIR* currDir = opendir(".");
-                while ((aDir = readdir(currDir)) != NULL)
-                {
-                    if (strncmp(strInput, aDir->d_name, strlen(strInput)) == 0)
-                    {
-                        const char* ext = strrchr(strInput, '.');
-                        if (!ext) {
-                            /* no extension */
-                        }
-                        else if (strcmp(ext + 1, "csv") == 0)
-                        {
-                            processFile(strInput);
-                            checker = true;
-                            runInterface = false;
-                        }
-                        else
-                        {
-                            printf("The file %s needs the extension '.csv'./n", strInput);
-                        }
-                    }
-                }
-                if (!checker)
-                {
-                    printf("The file %s was not found. Try again\n", strInput);
-                }
+            /*  Omitted
+            *   Switch statment that check the numInput
+            *   case 1: //largest file
+            *   . . .
+            *   case 2: //smallest file
+            *   . . .
+            *   case 3 // asked for an input for the complete file name
+            */
                 closedir(currDir);
                 break;
             }
