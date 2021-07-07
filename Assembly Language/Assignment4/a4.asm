@@ -1,8 +1,7 @@
-TITLE Assignment 4     (Assignement4.asm)
+TITLE Assignment 4     (a4.asm)
 
 ; Author: Abraham Almahmoud
 ; Last Modified: 05/10/2020
-; OSU email address: almahmoa@oregonstate.edu
 ; Course number/section: 271
 ; Project Number: 3                Due Date: 05/10/2020
 ; Description: Output composite numbers within a given range
