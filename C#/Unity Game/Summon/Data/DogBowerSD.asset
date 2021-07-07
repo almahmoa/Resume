@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6896b404fff2a7d479a52efd84d21e38, type: 3}
+  m_Name: DogBowerSD
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  baseSpeed: 1
+  maxSpeed: 1
+  maxJumpHeight: 4
+  minJumpHeight: 1
+  timeToJumpApex: 0.4
+  accelerationTimeAirborne: 0.2
+  sizeX: 1.32
+  sizeY: 2.09
+  offsetX: 0.05
+  offsetY: -0.3
+  maxHealth: 1
+  summonName: Dog Bower
+  setDelayTimeWalk: 0
+  setDelayTimeJump: 0
+  teleportDistance: 15
+  canUnsummon: 1
+  unsummonTime: 5
+  canAttack: 0
+  canSwing: 0
+  canFollow: 0

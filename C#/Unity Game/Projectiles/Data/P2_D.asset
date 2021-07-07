@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75be02e1caa36944a8c3e58f086cc4e4, type: 3}
+  m_Name: P2_D
+  m_EditorClassIdentifier: 
+  endSpeed: 10
+  checkRadius: 0.5
+  minRangeRadius: 0.5
+  maxRangeRadius: 0.5
+  acceleration: 0.25
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsDamagable:
+    serializedVersion: 2
+    m_Bits: 512
+  target: Player
+  isHoming: 1
+  sprite: {fileID: 21300000, guid: d0a0ad6ec8dfaf84a8d8aeffc8a4f970, type: 3}
+  size: 2
+  color: {r: 1, g: 0, b: 0, a: 1}
+  setLifeTime: 0

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75be02e1caa36944a8c3e58f086cc4e4, type: 3}
+  m_Name: DSD_PD
+  m_EditorClassIdentifier: 
+  endSpeed: 0
+  checkRadius: 0.5
+  minRangeRadius: 0.5
+  maxRangeRadius: 0.5
+  acceleration: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsDamagable:
+    serializedVersion: 2
+    m_Bits: 0
+  target: 
+  isHoming: 0
+  sprite: {fileID: 21300000, guid: d08cfafd1c0a19344b16184af780843a, type: 3}
+  size: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  setLifeTime: 0
