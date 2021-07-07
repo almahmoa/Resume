@@ -1,8 +1,7 @@
-TITLE Assignment 2     (Assignment2.asm)
+TITLE Assignment 2     (a2.asm)
 
 ; Author: Abraham Almahmoud
 ; Last Modified:4/18/2020
-; OSU email address: almahmoa@oregonstate.edu
 ; Course number/section: 271
 ; Project Number: 2                 Due Date: 04/19/2020
 ; Description: A program that will calculate Fibonacci numbers.
