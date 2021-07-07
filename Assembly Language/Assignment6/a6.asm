@@ -1,8 +1,7 @@
-TITLE Assignment 6     (Assignment6.asm)
+TITLE Assignment 6     (a6.asm)
 
 ; Author: Abraham Almahmoud
 ; Last Modified: 06/07/2020
-; OSU email address: almahmoa@oregonstate.edu
 ; Course number/section: 271
 ; Project Number: 6                Due Date: 06/07/2020
 ; Description: Read 10 inputs from user, valided the inputs as proper integer values (negative, or positive) as string, coverting them to interger.
@@ -10,7 +9,7 @@ TITLE Assignment 6     (Assignment6.asm)
 
 INCLUDE Irvine32.inc
 
-getString		MACRO		;should display a prompt, then get the user’s keyboard input into a memory location
+getString		MACRO		;should display a prompt, then get the userâ€™s keyboard input into a memory location
 	displayString
 	push	ebp
 	push	ecx
@@ -93,7 +92,7 @@ main ENDP
 ; preconditions: None
 ; registers changed: edx, esi, edi, eax, ebx, ecx
 ; ***************************************************************
-ReadVal			PROC		;should invoke the getString macro to get the user’s string of digits. It should then convert the digit string to numeric, while validating the user’s input.
+ReadVal			PROC		;should invoke the getString macro to get the userâ€™s string of digits. It should then convert the digit string to numeric, while validating the userâ€™s input.
 	push	ebp
 	mov		ebp, esp
 	mov		edx, [ebp+8]
