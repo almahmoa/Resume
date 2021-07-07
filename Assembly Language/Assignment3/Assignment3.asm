@@ -1,8 +1,7 @@
-TITLE Assignment 3     (Assignment3.asm)
+TITLE Assignment 3     (a3.asm)
 
 ; Author: Abraham Almahmoud
 ; Last Modified: 05/02/2020
-; OSU email address: almahmoa@oregonstate.edu
 ; Course number/section: 271
 ; Project Number: 3                Due Date: 05/03/2020
 ; Description: Take a sum of inputed negative numbers and output the maximum, minimum, sum, and roudned average.
