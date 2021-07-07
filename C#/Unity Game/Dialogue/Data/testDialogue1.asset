@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d93cfc69492150488e3283c2a5f8c01, type: 3}
+  m_Name: testDialogue1
+  m_EditorClassIdentifier: 
+  textField: this is dialogue 1
+  nextDD: {fileID: 11400000, guid: d71cfc1ed72c3a94d97b8f22d2295da1, type: 2}
