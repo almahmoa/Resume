@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d93cfc69492150488e3283c2a5f8c01, type: 3}
+  m_Name: DIntro2
+  m_EditorClassIdentifier: 
+  textField: "Please tell me that gross thing over there is NOT the Nani we were
+    looking for\u2026"
+  nextDD: {fileID: 11400000, guid: 8e884ac0d093a2f4a9baa692113785ce, type: 2}
+  textBubble: 1
+  hasTail: 1
+  tailX: -43.25
+  tailY: 175
+  tdir: -1
+  nSpeaker: 0
+  isDSD: 0
+  isUM: 1
+  isLumby: 0
+  isDaddy: 0
+  DSDWon: 0
+  DSDLost: 0
+  unpausePlayer: 0
+  smallText: 
+  restoreCamera: 0
+  ZoomIn: 0
+  ZoomOut: 0
+  isCamPanX: 0
+  isCamPanY: 0
+  camPanAmountX: 0
+  camPanAmountY: 0
+  animationName: sad

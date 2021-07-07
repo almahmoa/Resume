@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d93cfc69492150488e3283c2a5f8c01, type: 3}
+  m_Name: DaddyAlt2
+  m_EditorClassIdentifier: 
+  textField: "Oh?\u2026 Back for more Missy?"
+  nextDD: {fileID: 11400000, guid: 45e3f0ead403eb44d8deee0990cf81cf, type: 2}
+  textBubble: 1
+  hasTail: 1
+  tailX: 0
+  tailY: 0
+  tdir: 0
+  nSpeaker: 0
+  isDSD: 0
+  isUM: 0
+  isLumby: 0
+  isDaddy: 1
+  DSDWon: 0
+  DSDLost: 0
+  unpausePlayer: 0
+  smallText: 
+  restoreCamera: 0
+  zoomIn: 0
+  zoomOut: 0
+  daddyStart: 0
+  isCamPanX: 1
+  isCamPanY: 0
+  camPanAmountX: 14
+  camPanAmountY: 0
+  animationName: idle

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d93cfc69492150488e3283c2a5f8c01, type: 3}
+  m_Name: DSDIntro1
+  m_EditorClassIdentifier: 
+  textField: You done well finding my secret lair, child!
+  nextDD: {fileID: 11400000, guid: 2dea464cf2211854fa3efdc028c08c89, type: 2}
+  textBubble: 1
+  hasTail: 1
+  tailX: 50
+  tailY: 175
+  tdir: 1
+  fontSize: 0
+  nSpeaker: 0
+  isDSD: 1
+  isUM: 0
+  isLumby: 0
+  isDaddy: 0
+  DSDWon: 0
+  DSDLost: 0
+  unpausePlayer: 0
+  smallText: 
+  restoreCamera: 0
+  zoomIn: 0
+  zoomOut: 0
+  daddyStart: 0
+  endingStart: 0
+  lumbypauseend: 0
+  toCredit: 0
+  isCamPanX: 1
+  isCamPanY: 0
+  camPanAmountX: 12
+  camPanAmountY: 0
+  animationName: 
